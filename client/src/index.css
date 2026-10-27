@@ -1,0 +1,110 @@
+/* ---------- Colour scheme (overrides Bootstrap 5.3 variables) ---------- */
+:root {
+  --hp-primary: #1f6f6b;
+  --hp-primary-hover: #185a57;
+  --hp-primary-active: #134846;
+  --hp-primary-rgb: 31, 111, 107;
+  --hp-nav: #17403f;
+  --hp-accent: #b8893b;
+
+  --bs-primary: var(--hp-primary);
+  --bs-primary-rgb: var(--hp-primary-rgb);
+  --bs-link-color: var(--hp-primary);
+  --bs-link-color-rgb: var(--hp-primary-rgb);
+  --bs-link-hover-color: var(--hp-primary-hover);
+  --bs-link-hover-color-rgb: 24, 90, 87;
+  --bs-primary-bg-subtle: #dcecea;
+  --bs-primary-border-subtle: #a9cfcb;
+  --bs-primary-text-emphasis: #134846;
+  --bs-body-bg: #f6f4ef;
+  --bs-info: #3a7ca5;
+  --bs-info-rgb: 58, 124, 165;
+  --bs-warning: #d9a441;
+  --bs-warning-rgb: 217, 164, 65;
+}
+
+[data-bs-theme="dark"] {
+  --hp-primary: #3a9d97;
+  --hp-primary-hover: #4fb3ad;
+  --hp-primary-active: #66c2bc;
+  --hp-primary-rgb: 58, 157, 151;
+  --hp-nav: #0f2a29;
+  --bs-link-color-rgb: 102, 194, 188;
+  --bs-link-hover-color: #8fd6d1;
+  --bs-primary-bg-subtle: #0f2e2c;
+  --bs-primary-border-subtle: #1f5753;
+  --bs-primary-text-emphasis: #8fd6d1;
+  --bs-body-bg: #14181a;
+}
+
+/* Cards stay white on the warm page background in light mode */
+[data-bs-theme="light"] .card,
+:root:not([data-bs-theme]) .card { --bs-card-bg: #fff; }
+
+.btn-primary {
+  --bs-btn-bg: var(--hp-primary);
+  --bs-btn-border-color: var(--hp-primary);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--hp-primary-hover);
+  --bs-btn-hover-border-color: var(--hp-primary-hover);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--hp-primary-active);
+  --bs-btn-active-border-color: var(--hp-primary-active);
+  --bs-btn-active-color: #fff;
+  --bs-btn-disabled-bg: var(--hp-primary);
+  --bs-btn-disabled-border-color: var(--hp-primary);
+  --bs-btn-focus-shadow-rgb: var(--hp-primary-rgb);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--hp-primary);
+  --bs-btn-border-color: var(--hp-primary);
+  --bs-btn-hover-bg: var(--hp-primary);
+  --bs-btn-hover-border-color: var(--hp-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--hp-primary-active);
+  --bs-btn-active-border-color: var(--hp-primary-active);
+  --bs-btn-active-color: #fff;
+  --bs-btn-disabled-color: var(--hp-primary);
+  --bs-btn-disabled-border-color: var(--hp-primary);
+  --bs-btn-focus-shadow-rgb: var(--hp-primary-rgb);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--hp-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--hp-primary-rgb), 0.2);
+}
+.form-check-input:checked {
+  background-color: var(--hp-primary);
+  border-color: var(--hp-primary);
+}
+.page-link { color: var(--hp-primary); }
+.page-item.active .page-link {
+  background-color: var(--hp-primary);
+  border-color: var(--hp-primary);
+  color: #fff;
+}
+.nav-pills .nav-link.active { background-color: var(--hp-primary); }
+.list-group-item.active { background-color: var(--hp-primary); border-color: var(--hp-primary); }
+
+/* ---------- Layout / components ---------- */
+.brand-nav { background: var(--hp-nav); border-bottom: 3px solid var(--hp-accent); }
+.hero {
+  background: linear-gradient(rgba(16, 38, 37, 0.7), rgba(16, 38, 37, 0.7)),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=70") center/cover;
+  color: #fff;
+  padding: 110px 0;
+}
+.room-card img { height: 190px; object-fit: cover; }
+.room-card { transition: transform 0.15s ease; }
+.room-card:hover { transform: translateY(-3px); }
+.tab-scroll { overflow-x: auto; white-space: nowrap; flex-wrap: nowrap; }
+.tab-scroll .nav-link { cursor: pointer; }
+.thumb { width: 72px; height: 54px; object-fit: cover; border-radius: 6px; }
+.star { color: var(--hp-accent); }
+.invoice-sheet { max-width: 820px; margin: 0 auto; }
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff !important; }
+  .invoice-sheet { max-width: 100%; box-shadow: none !important; border: 0 !important; }
+}
